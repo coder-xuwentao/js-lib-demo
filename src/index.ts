@@ -15,8 +15,8 @@ export function clone<T>(source: T): T {
   if (t === 'object') {
     target = {};
     const sourceObj = source as ObjectNeedKeys; // 断言ts为source为对象
-    for (let i in source) {
-      if (sourceObj.hasOwnProperty(i)) {
+    for (const i in source) {
+      if (Object.prototype.hasOwnProperty.call(sourceObj, i)) {
         target[i] = clone(sourceObj[i]);
       }
     }
