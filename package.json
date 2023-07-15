@@ -12,7 +12,9 @@
     "build:aio": "rollup -c config/rollup.config.aio.js",
     "build": "npm run build:cjs && npm run build:esm && npm run build:aio",
     "test": "jest",
-    "prettier": "npx prettier --w src"
+    "lint": "eslint src test",
+    "lint:prettier": "prettier --check src",
+    "prepare": "husky install"
   },
   "files": [
     "/dist",
