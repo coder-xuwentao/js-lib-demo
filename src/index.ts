@@ -12,7 +12,7 @@ export function clone<T>(source: T): T {
 
   let target: any;
 
-  if (t === 'object') {
+  if (t == "object") {
     target = {};
     const sourceObj = source as ObjectNeedKeys; // 断言ts为source为对象
     for (const i in source) {
@@ -21,6 +21,7 @@ export function clone<T>(source: T): T {
       }
     }
   } else {
+    
     target = [];
     const sourceArr = source as any[]; // 断言ts为source为数组
     for (let i = 0; i < sourceArr.length; i++) {
