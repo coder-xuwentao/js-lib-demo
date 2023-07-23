@@ -12,12 +12,13 @@ export function clone<T>(source: T): T {
 
   let target: any;
 
-  if (t === 'object') {
+  if (t === "object") {
     target = {};
     const sourceObj = source as ObjectNeedKeys; // 断言ts为source为对象
     for (const i in source) {
       if (Object.prototype.hasOwnProperty.call(sourceObj, i)) {
         target[i] = clone(sourceObj[i]);
+
       }
     }
   } else {
